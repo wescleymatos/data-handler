@@ -1,0 +1,39 @@
+### INSTALLATION ###
+
+PARA UTILIZAR A CLASSE BASTA
+IMPORTA-LA PARA O SEU PROJETO
+E INSTÂNCIA-LA.
+
+EX:
+
+<?php
+require_once("DateHandler.class.php");
+
+$dateHandler = new DateHandler();
+$idade = $dateHandler->calculaIdade(11/02/1987);
+
+?>
+
+
+### TESTE REALIZADOS UTILIZANDO O FRAMEWORK SIMPLETEST ###
+
+ -------------------------------------
+| ENTRADA DO TESTE | SAÍDA ESPERADA   |
+ -------------------------------------
+|    11/02/1987    |    1987-02-11    |
+ -------------------------------------
+|    1987-02-11    |    11/02/1987    |
+ -------------------------------------
+|    1987/02/11    |"Formato inválido"|
+ -------------------------------------
+|    11-02-1987    |"Formato inválido"|
+ -------------------------------------
+|    11/02-1987    |"Formato inválido"|
+ -------------------------------------
+|    11-02/1987    |"Formato inválido"|
+ -------------------------------------
+|    11/02//987    |"Formato inválido"|
+ -------------------------------------
+|    1987-02--1    |"Formato inválido"|
+ -------------------------------------
+
