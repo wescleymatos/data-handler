@@ -6,7 +6,7 @@
       private $mm;
       private $aaaa;
 
-         public function converterDateMysql($date) {
+         public function convertDate($date) {
              if (substr($date, 2, 1) == "/" && substr($date, 5, 1) == "/") {
                $this->dd = substr($date, 0, 2);
                $this->mm = substr($date, 3, 2);
@@ -20,6 +20,8 @@
                $date =  $this->dd . "/" . $this->mm . "/" . $this->aaaa;
                return $date;
   
+             } else {
+               return "Data invalida";
              }
          }
 
