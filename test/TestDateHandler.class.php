@@ -17,6 +17,13 @@
             $result = $this->date->converterDateMysql($datePtBr);
             $this->assertEquals("1987-02-11", $result);
         }
+
+        public function testDateHandler2(){
+          //testa se 1987-02-11 retorna 11/02//1987
+          $dateMysql = "1987-02-11";
+          $result = $this->date->converterDateMysql($dateMysql);
+          $this->assertEquals("11/02/1987", $result);
+        }
     }
 
 ?>
