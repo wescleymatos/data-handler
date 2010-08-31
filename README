@@ -15,7 +15,7 @@ $idade = $dateHandler->calculaIdade(11/02/1987);
 ?>
 
 
-### TESTE REALIZADOS UTILIZANDO O FRAMEWORK SIMPLETEST ###
+### TESTE REALIZADOS UTILIZANDO O FRAMEWORK PHPUnit ###
 
  -------------------------------------
 | ENTRADA DO TESTE | SAÍDA ESPERADA   |

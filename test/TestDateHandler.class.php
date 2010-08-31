@@ -52,6 +52,15 @@
             $result = $this->date->convertDate($date);
             $this->assertEquals("Data invalida", $result);
         }
+
+
+        public function testDateHandler7(){
+            //testa se 11/02//987 retorna "Data invalida"
+          $date = "11/02//987";
+          $result = $this->date->convertDate($date);
+          $this->assertEquals("Data invalida", $result);
+
+        }
     }
 
 ?>
