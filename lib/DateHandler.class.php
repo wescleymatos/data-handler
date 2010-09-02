@@ -2,18 +2,19 @@
 
     class DateHandler {
 
-      private $dd;
-      private $mm;
-      private $aaaa;
+        private $dd;
+        private $mm;
+        private $aaaa;
 
-        static function ehValida($numDate){
-          for ($i = 0; $i < strlen($numDate); $i++) {
-            if (is_numeric(substr($numDate, $i, 1))) {
+        static function aDataEhValida($date){
+          for ($i = 0; $i < strlen($date); $i++) {
+            if (is_numeric(substr($date, $i, 1))) {
               if ($i == 7) {
-                return true;
+                return true; 
               }
             } else {
-              return false;
+                return false;
+                break;
             }
           }
         }
@@ -24,11 +25,13 @@
                $this->mm = substr($date, 3, 2);
                $this->aaaa = substr($date, 6, 4);
 
-               $numDate = $this->aaaa . $this->mm . $this->dd;
+               $numDate1 = $this->aaaa . $this->mm . $this->dd;
 
-                  if(DateHandler::ehValida($numDate)){
+                  if(DateHandler::aDataEhValida($numDate1) == true){
                       $date = $this->aaaa . "-" . $this->mm . "-" . $this->dd;
                       return $date;
+                  } else {
+                    return "Data invalida";
                   }
 
                } elseif (substr($date, 4, 1) == "-" && substr($date, 7, 1) == "-") {
@@ -36,11 +39,13 @@
                 $this->mm = substr($date, 5, 2);
                 $this->aaaa = substr($date, 0, 4);
 
-                $numDate = $this->aaaa . $this->mm . $this->dd;
+                $numDate2 = $this->aaaa . $this->mm . $this->dd;
 
-                if(DateHandler::ehValida($numDate)){
+                if(DateHandler::aDataEhValida($numDate2)){
                   $date =  $this->dd . "/" . $this->mm . "/" . $this->aaaa;
                   return $date;
+                } else {
+                  return "Data invalida";
                 }
              } else {
                return "Data invalida";
