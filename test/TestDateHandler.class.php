@@ -63,10 +63,17 @@
         }
 
         public function testDateHandler8(){
-            //teste se 1987-02--1 restorna "Data invalida"
+            //teste se 1987-02--1 retorna "Data invalida"
             $date = "1987-02--1";
             $result = $this->date->convertDate($date);
             $this->assertEquals("Data invalida", $result);
+        }
+
+        public function testCalculaIdadeAtravesDaData1(){
+          //teste se 11/02/1987 retorna 23
+          $date = "11/02/1987";
+          $result = $this->date->calculaIdade($date);
+          $this->assertEquals(23, $result);
         }
     }
 
